@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-void updateValueTo98(int *ptr) {
-	    if (ptr != NULL) { 
-		            *ptr = 98
+void reset_to_98(int *n) {
+    if (n != NULL) { // Check if the pointer is not NULL to avoid undefined behavior.
+        *n = 98; // Update the value the pointer points to 98.
 			        }
-}
+    }
 
 int main() {
-	    int number = 42;
-	        int *ptr = &number;
+    int number = 42;
+    int *ptr = &number;
 
-		    printf("Before: %d\n", *ptr);
+    printf("Before: %d\n", *ptr);
+		        
+    reset_to_98(ptr);
 
-		        updateValueTo98(ptr);
+    printf("After: %d\n", *ptr);
 
-			    printf("After: %d\n", *ptr);
-
-			        return 0;
+    return 0;
 }
